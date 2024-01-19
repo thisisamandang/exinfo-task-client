@@ -16,7 +16,7 @@ const SelectorBar = (props: Props) => {
             }}
           >
             <img
-              src={`http://localhost:8000/images/assets/${image.file}`}
+              src={`https://dyirsvyfewuvw.cloudfront.net/converted-images/${image.s3Name}`}
               // alt={`Image ${image.file.replace(/^\.\/assets/, "")}`}
             />
           </button>

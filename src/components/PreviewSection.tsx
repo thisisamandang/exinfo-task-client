@@ -16,10 +16,8 @@ const PreviewSection = (props: Props) => {
       {/* Uncomment the following lines to display the image */}
       <img
         className="h-full w-full"
-        src={`http://localhost:8000/images/assets/${
-          props.images[props.activeIndex]?.file
-        }`}
-        // alt={`Image ${props.images[0].file.replace(/^\.\/assets/, "")}`}
+        src={`https://dyirsvyfewuvw.cloudfront.net/converted-images/${props.images[props.activeIndex]?.s3Name}`}
+        alt={`Image Preview`}
       />
       {/* <img
         src={`http://localhost:8000/images/assets/${

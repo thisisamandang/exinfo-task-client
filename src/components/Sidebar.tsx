@@ -9,9 +9,6 @@ const Sidebar = (props: Props) => {
         <ul>
           <li>Lens: {props.exifInfo[props.activeIndex]?.info.Lens}</li>
           <li>
-            Focus Mode: {props.exifInfo[props.activeIndex]?.info.FocusMode}
-          </li>
-          <li>
             Capture Time: {props.exifInfo[props.activeIndex]?.info.CaptureTime}
           </li>
           <li>ISO: {props.exifInfo[props.activeIndex]?.info.ISO}</li>

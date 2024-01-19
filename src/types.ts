@@ -1,6 +1,7 @@
 export interface ImageData {
   index: number;
   file: string;
+  s3Name: string;
 }
 export interface ExifInfo {
   Lens?: string;
