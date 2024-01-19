@@ -11,6 +11,7 @@ const App: React.FC = () => {
   const [exifInfo, setExifInfo] = useState<ExifInfoWithIndex[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -30,14 +31,14 @@ const App: React.FC = () => {
   }, []);
   console.log(images);
   return (
-    <div className="flex h-screen w-full">
+    <div className="flex h-screen">
+      
       <div className="flex flex-col w-3/4 ">
-        <h1>Image Gallery</h1>
+        <div className="bg-[#262626]">Welcome</div>
         <PreviewSection
           images={images}
           exifInfo={exifInfo}
-          activeIndex={activeIndex}
-        />
+          activeIndex={activeIndex}/>
         <SelectorBar
           images={images}
           exifInfo={exifInfo}
