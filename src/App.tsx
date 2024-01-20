@@ -19,7 +19,7 @@ const App: React.FC = () => {
         const response = await axios.get<{
           images: ImageData[];
           exifInfo: ExifInfoWithIndex[];
-        }>("https://exifinfo.onrender.com/exifinfo");
+        }>("https://exifinfo.azurewebsites.net/exifinfo");
         setImages(response.data.images);
         setExifInfo(response.data.exifInfo);
       } catch (error) {
