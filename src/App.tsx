@@ -5,11 +5,13 @@ import SelectorBar from "./components/SelectorBar";
 import { ExifInfoWithIndex, ImageData } from "./types";
 import Sidebar from "./components/Sidebar";
 import PreviewSection from "./components/PreviewSection";
+import Loading from "./components/Loading";
 
 const App: React.FC = () => {
   const [images, setImages] = useState<ImageData[]>([]);
   const [exifInfo, setExifInfo] = useState<ExifInfoWithIndex[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,16 +21,21 @@ const App: React.FC = () => {
           exifInfo: ExifInfoWithIndex[];
         }>("https://exifinfo.onrender.com/exifinfo");
         setImages(response.data.images);
-
         setExifInfo(response.data.exifInfo);
       } catch (error) {
         console.error("Error fetching images:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchData();
   }, []);
-  console.log(images);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="flex h-screen">
       <div className="flex flex-col w-3/4 ">
